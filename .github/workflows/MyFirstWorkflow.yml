@@ -38,7 +38,7 @@ jobs:
           files:" 
           tree
           echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
-echo "::error file=app.js,line=1,col=5,endColumn=7::Error in app.js"
+          echo "::error file=app.js,line=1,col=5,endColumn=7::Error in app.js"
       
   
 
