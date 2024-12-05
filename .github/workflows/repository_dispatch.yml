@@ -1,0 +1,5 @@
+name: trigger using github api
+on: 
+  repository_dispatch:
+    types: [event1, event2]
+  
