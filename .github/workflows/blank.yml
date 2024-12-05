@@ -1,0 +1,18 @@
+name: masking secret values across multiple steps
+
+on: push
+
+jobs: 
+  generate-a-secret-output
+    runs-on: ubuntu-latest
+    steps:
+    - id: sets-a-secret
+      name: generate, mask, output a secret
+      run: |
+        the_secret=$((RANDOM ))
+        echo "::add-mask::$the_secret"
+        echo "secret_number=$the_secret" >> "GITHUB_OUTPUT"
+    - name: Use that secret outut protected by a mask
+      run: |
+        echo "the secret number is ${{ steps.sets-a-secret.outputs.secreet_number }}"
+        
