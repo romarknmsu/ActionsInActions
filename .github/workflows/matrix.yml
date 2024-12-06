@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  job_1:
+  test:
     strategy:
       fail-fast: false
       max-parallel: 3
