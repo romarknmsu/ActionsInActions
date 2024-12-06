@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  job_1:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix: 
+        os: [max-os-latest, ubuntu-latest]
+        node_version: [12, 13, 14]
+
+      name: My first job
+      runs-on: ${{ matrix.os }}
+      steps: 
+        - uses: actions/setup-node@v3.6.0
+          with: 
+            node-version: ${{ matrix.node_version }} 
