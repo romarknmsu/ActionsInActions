@@ -19,7 +19,7 @@ on:
         type: boolean
       environment:
         description: 'Environment to run tests against'
-        type: choice
+        type: environment
         required: true
 jobs:
   my_job:
