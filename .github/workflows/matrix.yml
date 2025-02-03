@@ -1,3 +1,5 @@
+name: matrix job examples
+
 on: push
 
 jobs:
